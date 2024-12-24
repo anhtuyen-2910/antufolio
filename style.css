@@ -1,0 +1,2120 @@
+* {
+    /* reset */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    height: fit-content;
+    font-family: "Josefin Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer {
+    color: #2C125E;
+    text-align: center;
+    font-family: "League Script";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#footer-light {
+    color: #B9FFFF;
+}
+
+/* Page container */
+.page {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Start with the page moved down */
+    animation: fadeInUp 0.5s forwards;
+    /* Trigger animation on page load */
+}
+
+/* Keyframes for fadeIn and move up */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+        /* Start below the normal position */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* End at normal position */
+    }
+}
+
+#loading {
+    background-color: #2c125e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    /* Fade in the entire screen */
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Move down while fading out */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+#home {
+    background: linear-gradient(180deg, #2C125E 0%, #251297 100%);
+    height: fit-content;
+}
+
+#work {
+    background: linear-gradient(180deg, #2C125E 0%, #00E4BA 100%);
+    height: fit-content;
+}
+
+#about {
+    background: linear-gradient(180deg, #2C125E 0%, #FF8AF6 100%);
+    height: fit-content;
+}
+
+#contact {
+    background: linear-gradient(180deg, #2C125E 0%, #FF156A 100%);
+    height: fit-content;
+}
+
+#combo {
+    background-color: #2C125E;
+}
+
+#nav {
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    position: relative;
+    left: 7vw;
+}
+
+#button-work {
+    background-color: #00E4BA;
+}
+
+#button-work:hover {
+    background-color: #48DDFF;
+}
+
+#button-about {
+    background-color: #FF8AF6;
+}
+
+#button-about:hover {
+    background-color: #48DDFF;
+}
+
+#button-contact {
+    background-color: #FF156A;
+}
+
+#button-contact:hover {
+    background-color: #48DDFF;
+}
+
+#loading-badge {
+    text-align: center;
+    animation: spin 2s forwards;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#remember {
+    text-align: center;
+}
+
+#loading-badge img {
+    max-width: 30%;
+    height: auto;
+    width: 100%;
+    /* Ensure the image can scale within the parent */
+}
+
+/* Zoom-in Effect (delayed) */
+#loading.zoom-in {
+    animation: zoomIn 1s ease-in-out forwards;
+}
+
+/* Zoom-in Animation */
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+        /* Start small */
+        opacity: 1;
+    }
+
+    80% {
+        transform: scale(9);
+        /* Full size */
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(10);
+        /* Full size */
+        opacity: 0;
+    }
+}
+
+h2 {
+    color: #B9FFFF;
+    text-align: right;
+    font-family: "League Script";
+    font-size: 160px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+    margin-left: 40vw;
+    margin-right: 3vw;
+    margin-top: 3vw;
+}
+
+p {
+    color: #B9FFFF;
+}
+
+#work-opening h1 {
+    color: #00E4BA;
+    text-align: center;
+    font-family: "League Script";
+    font-size: 32rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+    position: relative;
+    bottom: 5vh;
+}
+
+#about-opening h1 {
+    color: #FF8AF6;
+    text-align: center;
+    font-family: "League Script";
+    font-size: 25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+}
+
+#contact-opening h1 {
+    color: #FF156A;
+    text-align: center;
+    font-family: "League Script";
+    font-size: 19rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+}
+
+#home-opening {
+    position: relative;
+    bottom: 10vh;
+}
+
+#about-opening {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+h3 {
+    color: #B9FFFF;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+#logo {
+    cursor: pointer;
+    z-index: 200;
+}
+
+#logo img {
+    max-width: 8%;
+    height: auto;
+    width: 100%;
+    /* Ensure the image can scale within the parent */
+}
+
+/* The container for the typed text */
+#intro-home {
+    font-size: 1.2em;
+    color: #B9FFFF;
+    text-align: left;
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    display: inline-block;
+    margin-top: 40vh;
+    overflow: hidden;
+}
+
+#intro-work {
+    font-size: 1.2em;
+    color: #00E4BA;
+    text-align: center;
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin-top: 5vh;
+    bottom: 10vh;
+    white-space: nowrap;
+}
+
+#intro-about {
+    font-size: 1.2em;
+    color: #FF8AF6;
+    text-align: center;
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+#intro-contact {
+    font-size: 1.2em;
+    color: #FF156A;
+    text-align: center;
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+#landing-image {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 3vw;
+    bottom: 30vh;
+}
+
+#landing-image img {
+    max-width: 70%;
+    height: auto;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #1400A4;
+    text-align: center;
+    font-family: "Josefin Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    z-index: 200;
+}
+
+button:hover {
+    color: #B9FFFF;
+}
+
+#banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+#banner {
+    height: 1vh;
+    width: 45vw;
+}
+
+#bannerA {
+    position: relative;
+    /* This makes Object B position relative to Object A */
+    display: inline-block;
+    bottom: 70vh;
+    left: 2vw;
+}
+
+#bannerB {
+    position: absolute;
+    /* Absolute positioning within Object A */
+    top: 0;
+    /* Position at the top of Object A */
+    left: 0;
+    /* Position at the left of Object A */
+    right: 0;
+    /* Extend to the right edge of Object A */
+    bottom: 0;
+    display: none;
+}
+
+#abstract {
+    position: relative;
+    bottom: 30vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.abstract-text {
+    margin-left: 8vw;
+    display: flex;
+    flex-direction: column;
+    gap: 7vw;
+    max-height: 100vh;
+}
+
+.abstract-text h3 {
+    color: #B9FFFF;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+#abstract-text-1 {
+    margin-left: 72vw;
+}
+
+#abstract-text-2 {
+    margin-left: 52vw;
+}
+
+#abstract-text-3 {
+    margin-left: 32vw;
+}
+
+#abstract-text-4 {
+    margin-left: 12vw;
+}
+
+#abstract-text-6 {
+    margin-left: 9vw;
+}
+
+#abstract-text-7 {
+    margin-left: 22vw;
+}
+
+#abstract-text-8 {
+    margin-left: 35vw;
+}
+
+#tool {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 10vh;
+    z-index: 100;
+    left: 15vw;
+}
+
+#arrow img {
+    max-width: 70%;
+    height: auto;
+    width: 100%;
+}
+
+#arrow {
+    position: relative;
+    top: 5vw;
+    animation: point 2s infinite;
+}
+
+@keyframes point {
+    0% {
+        position: relative;
+        left: 0vw;
+    }
+
+    30% {
+        position: relative;
+        left: 4vw;
+    }
+
+    100% {
+        position: relative;
+        left: 0vw;
+    }
+}
+
+#comb img {
+    max-width: 60%;
+    height: auto;
+    width: 100%;
+}
+
+#comb {
+    transform-origin: 30% 40%;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    cursor: pointer;
+}
+
+#comb.squish {
+    transform: translateY(200px);
+    /* Move the comb down by 50px */
+}
+
+#mascotA img {
+    max-width: 50%;
+    height: auto;
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+    /* Smooth transition for mascot squish */
+}
+
+#mascotA.squished img {
+    transform-origin: bottom;
+    transform: scaleY(0.8);
+    /* Squish the mascot by scaling it down */
+}
+
+#patpat {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    top: 15vh;
+}
+
+#mascotA {
+    width: 50vw;
+    height: auto;
+    position: relative;
+    bottom: 35vh;
+    left: 13vw;
+}
+
+#patpat img {
+    max-width: 50%;
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+
+#navigation {
+    position: relative;
+    bottom: 40vh;
+    text-align: center;
+}
+
+.bubble img {
+    max-width: 50%;
+    height: auto;
+    width: 100%;
+}
+
+#bubble-machine {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    margin-top: 20vh;
+}
+
+#bubble-machine img {
+    max-width: 80%;
+    height: auto;
+    width: 100%;
+}
+
+#machineA {
+    position: relative;
+    display: inline-block;
+}
+
+#machineB {
+    position: relative;
+    display: inline-block;
+}
+
+#machineC {
+    position: relative;
+    display: inline-block;
+}
+
+.button-bow {
+    position: absolute;
+    top: 33.5vh;
+    left: 5.25vw;
+    transform-origin: 50% 55%;
+    transition: transform 0.75s ease-in;
+    cursor: pointer;
+}
+
+.button-bow:hover {
+    transform: rotate(45deg);
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+#text1 {
+    position: relative;
+    top: 10vh;
+}
+
+#text1 img {
+    max-width: 50%;
+    height: auto;
+    width: 100%;
+}
+
+#text1 h3 {
+    position: relative;
+    bottom: 5vh;
+}
+
+#bubbleB {
+    position: relative;
+    top: 10vh;
+}
+
+#text2 {
+    margin-top: 10vw;
+    text-align: center;
+}
+
+#text2 img {
+    max-width: 70%;
+    height: auto;
+    width: 100%;
+}
+
+#info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#photo {
+    text-align: center;
+}
+
+#photo img {
+    max-width: 55%;
+    height: auto;
+    width: 100%;
+}
+
+
+
+.box-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 7vh;
+}
+
+.box {
+    color: #48DDFF;
+    background-color: #251297;
+    padding: 1vw;
+    border-radius: 1vw;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+}
+
+.box:hover {
+    background-color: #FF8AF6;
+    color: #251297;
+}
+
+#application {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+#application img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    display: block;
+    /* Makes the image block-level so margin auto works */
+    margin: 0 auto;
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5vh;
+}
+
+.sub-header {
+    color: #FF8AF6;
+    font-family: "Josefin Sans";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 0;
+}
+
+#box1 {
+    position: relative;
+    transform: rotate(15deg);
+}
+
+#box2 {
+    position: relative;
+    left: 12vw;
+    transform: rotate(-30deg);
+}
+
+#box3 {
+    position: relative;
+    left: 3vw;
+    transform: rotate(-10deg);
+}
+
+#box4 {
+    position: relative;
+    left: 13vw;
+    transform: rotate(30deg);
+}
+
+#box5 {
+    position: relative;
+    left: 3vw;
+    transform: rotate(20deg);
+}
+
+#box6 {
+    position: relative;
+    right: 7vw;
+    transform: rotate(-20deg);
+}
+
+#box7 {
+    position: relative;
+    right: 3vw;
+    transform: rotate(10deg);
+}
+
+#box8 {
+    position: relative;
+    transform: rotate(-25deg);
+}
+
+#box9 {
+    position: relative;
+    right: 7vw;
+    transform: rotate(10deg);
+}
+
+#box10 {
+    position: relative;
+    transform: rotate(-10deg);
+}
+
+#text3 {
+    text-align: center;
+    margin-top: 15vh;
+}
+
+#text3 img {
+    max-width: 70%;
+    height: auto;
+    width: 100%;
+}
+
+#text3 h3 {
+    color: #251297;
+    position: relative;
+}
+
+#cookie {
+    text-align: center;
+    height: fit-content;
+    width: auto;
+}
+
+#cookie img {
+    max-width: 60%;
+    height: auto;
+    width: 100%;
+}
+
+#bunch {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* align grid items along column axis */
+    justify-items: center;
+    /* align grid items along row axis */
+    align-items: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    position: relative;
+    bottom: 60vh;
+}
+
+.mini-cookie {
+    cursor: pointer;
+}
+
+
+#cookie1 {
+    position: relative;
+    bottom: 14vh;
+    left: 18vw;
+    transform: rotate(30deg);
+    transition: transform 1s ease;
+}
+
+#cookie1:hover {
+    transform: scale(1.25);
+}
+
+#cookie1:active {
+    animation: disappear 2s forwards;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#cookie2 {
+    position: relative;
+    transform: rotate(-50deg);
+    transition: transform 1s ease;
+}
+
+#cookie2:hover {
+    transform: scale(1.25);
+}
+
+#cookie2:active {
+    animation: disappear 2s forwards;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#cookie3 {
+    position: relative;
+    bottom: 5vh;
+    right: 10vw;
+    transform: rotate(45deg);
+    transition: transform 1s ease;
+}
+
+#cookie3:hover {
+    transform: scale(1.25);
+}
+
+#cookie3:active {
+    animation: disappear 2s forwards;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#cookie4 {
+    position: relative;
+    bottom: 15vh;
+    left: 8vw;
+    transform: rotate(75deg);
+    transition: transform 1s ease;
+}
+
+#cookie4:hover {
+    transform: scale(1.25);
+}
+
+#cookie4:active {
+    animation: disappear 2s forwards;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#cookie5 {
+    position: relative;
+    right: 5vw;
+    transform: rotate(75deg);
+    transition: transform 1s ease;
+}
+
+#cookie5:hover {
+    transform: scale(1.25);
+}
+
+#cookie5:active {
+    animation: disappear 2s forwards;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#cookie6 {
+    position: relative;
+    bottom: 5vh;
+    right: 16vw;
+    transform: rotate(30deg);
+    transition: transform 1s ease;
+}
+
+#cookie6:hover {
+    transform: scale(1.25);
+}
+
+#cookie6:active {
+    animation: disappear 2s forwards;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#message {
+    position: relative;
+    bottom: 30vh;
+}
+
+#text4 img {
+    max-width: 50%;
+    height: auto;
+    width: 100%;
+}
+
+#fortune {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    position: relative;
+    top: 10vh;
+}
+
+#fortune img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+#fortune1 {
+    z-index: 110;
+    position: relative;
+    left: 20.5vw;
+}
+
+#fortune2 {
+    z-index: 100;
+    position: relative;
+    right: 20.5vw;
+}
+
+#paper h3 {
+    color: #1400A4;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    position: relative;
+    top: 31vh;
+    z-index: 90;
+}
+
+#paper img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    position: relative;
+    top: 20vh;
+}
+
+#fortune1,
+#fortune2 {
+    transition: transform 1s ease-out;
+    /* Smooth movement */
+    cursor: pointer;
+    /* Change cursor to indicate clickable element */
+}
+
+#contact-milk {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 3vw;
+}
+
+#contact-milk img {
+    max-width: 60%;
+    height: auto;
+    width: 100%;
+}
+
+.milk {
+    cursor: pointer;
+}
+
+#input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 10vw;
+    margin-top: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#ending-image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    position: relative;
+    left: 8vw;
+}
+
+#here {
+    display: flex;
+    /* Flex container */
+    flex-direction: row;
+    /* Align items in a row */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Align items vertically */
+    gap: 2vw;
+    /* Add space between input and button */
+}
+
+.typing-input {
+    font-family: "Josefin Sans";
+    color: #FF156A;
+    font-size: 1.2rem;
+    font-weight: 400;
+    background-color: #48DDFF;
+    width: 30vw;
+    /* Adjust input width */
+    outline: none;
+    padding: 1.5vw;
+    /* Adjust padding for better fit */
+    border-radius: 1vw;
+    border: 0;
+    flex: 1;
+    /* Make the input field flexible */
+}
+
+.typing-input::placeholder {
+    color: #1400A4;
+}
+
+.send-button {
+    font-family: "Josefin Sans";
+    background-color: #251297;
+    /* Button color */
+    color: #48DDFF;
+    /* Button text color */
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1.2vw 2vw;
+    /* Adjust padding */
+    border-radius: 1vw;
+    /* Rounded corners */
+    border: none;
+    cursor: pointer;
+    /* Show pointer cursor */
+    transition: background-color 0.3s;
+    /* Smooth hover effect */
+}
+
+.send-button:hover {
+    background-color: #FF8AF6;
+    color: #251297;
+}
+
+.send-button:active {
+    background-color: #A68AF6;
+    color: #251297;
+}
+
+#text4 {
+    text-align: center;
+}
+
+#text5 {
+    text-align: center;
+}
+
+#text6 {
+    text-align: center;
+}
+
+#text7 {
+    text-align: center;
+}
+
+#text5 img {
+    max-width: 60%;
+    height: auto;
+    width: 100%;
+}
+
+#text6 img {
+    max-width: 40%;
+    height: auto;
+    width: 100%;
+}
+
+#text7 img {
+    max-width: 50%;
+    height: auto;
+    width: 100%;
+}
+
+.board-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.board-container img {
+    max-width: 70%;
+    height: auto;
+    width: 100%;
+}
+
+.board {
+    height: 100vh;
+}
+
+.board .sub-header {
+    color: #251297;
+    text-align: center;
+    margin-top: 3vh;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.board p {
+    color: #251297;
+}
+
+.button-each {
+    font-family: "Josefin Sans";
+    background-color: #251297;
+    /* Button color */
+    color: #48DDFF;
+    /* Button text color */
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1.2vw 2vw;
+    /* Adjust padding */
+    border-radius: 1vw;
+    /* Rounded corners */
+    border: none;
+    cursor: pointer;
+    /* Show pointer cursor */
+    margin-top: 2vh;
+    transition: background-color 0.3s;
+}
+
+.button-each:hover {
+    background-color: #95156a;
+    color: #ffd8f6;
+}
+
+.button-each:active {
+    background-color: #A68AF6;
+    color: #251297;
+}
+
+.each-work {
+    position: relative;
+    bottom: 63vh;
+}
+
+.collage img {
+    max-width: 45%;
+    height: auto;
+    width: 100%;
+}
+
+#short {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    line-height: 110%;
+    font-weight: 200;
+    color: #48DDFF
+}
+
+#bg {
+    margin-top: 5vw;
+}
+
+#bg img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    filter: blur(20px) brightness(50%);
+}
+
+.each-work-opening .sub-header {
+    color: #48DDFF;
+    font-size: 8rem;
+    text-align: center;
+    position: relative;
+    bottom: 15vw;
+}
+
+#each-main {
+    font-weight: 200;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    /* align grid items along row axis */
+    align-items: center;
+    text-align: center;
+    margin: 3vw;
+    position: relative;
+    top: 10vh;
+}
+
+/* Initial state of images */
+.artwork {
+    border-radius: 2vw;
+    opacity: 0;
+    /* Hide the image initially */
+    transform: translateY(200px);
+    /* Position images below their final position */
+    transition: opacity 3s ease-out, transform 1s ease-out;
+    /* Smooth fade-in and move-up */
+}
+
+/* When the image is in view, it will fade in and move up */
+.artwork.visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* Move the image to its original position */
+}
+
+.word {
+    opacity: 0;
+    /* Initially invisible */
+    transform: translateY(20px);
+    /* Initially moved down */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    /* Transition for fade and move */
+}
+
+/* When the .word elements become visible */
+.word.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+/* Add a delay to each word */
+.word:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.word:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.word:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.word:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.word:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.word:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.word:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+.word:nth-child(8) {
+    transition-delay: 0.8s;
+}
+
+.artwork img {
+    max-width: 90%;
+    height: auto;
+    width: 100%;
+}
+
+#button {
+    align-items: center;
+    margin: 5vw;
+}
+
+#video,
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main {
+    height: 250vh;
+}
+
+@media screen and (max-width: 1025px) {
+    #loading-badge img {
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 10rem;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    #logo img {
+        max-width: 20%;
+    }
+
+    #logo {
+        position: relative;
+    }
+
+    #home-opening {
+        position: relative;
+        bottom: 0;
+        height: 100vh;
+    }
+
+    #landing-image {
+        position: relative;
+        top: 12vh;
+        align-content: center;
+        align-items: center;
+    }
+
+    #intro-home {
+        font-size: 2em;
+        margin: 0;
+    }
+
+    #abstract {
+        height: 150vh;
+        position: relative;
+        bottom: 0;
+        align-content: baseline;
+    }
+
+    #bannerA {
+        position: relative;
+        display: inline-block;
+        bottom: 5vh;
+        left: 2vw;
+    }
+
+    .abstract-text h3 {
+        font-size: 2em;
+    }
+
+    .abstract-text {
+        gap: 13vw;
+        height: 100vh;
+        text-align: justify;
+    }
+
+    #abstract {
+        height: 200vh;
+        position: relative;
+        bottom: 0;
+        align-content: baseline;
+    }
+
+    #mascotA {
+        position: relative;
+        left: 13vw;
+        bottom: 36vh;
+    }
+
+    #tool {
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    #comb img {
+        max-width: 100%;
+    }
+
+    #arrow img {
+        max-width: 85%;
+    }
+
+    #patpat {
+        height: 50vh;
+    }
+
+    #patpat img {
+        max-width: 100%;
+    }
+
+    #bed {
+        position: relative;
+        bottom: 13vh;
+    }
+
+    #navigation {
+        height: 100vh;
+        position: relative;
+        bottom: 0;
+    }
+
+    #bubble-machine {
+        position: relative;
+    }
+
+    #text1 img {
+        max-width: 80%;
+    }
+
+    #text1 h3 {
+        position: relative;
+        bottom: 0;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
+    .button-bow {
+        top: 12vh;
+        left: 2.5vw;
+    }
+
+    #contact-opening h1 {
+        font-size: 15em;
+    }
+
+    #intro-contact {
+        font-size: 1.8em;
+    }
+
+    #contact-milk img {
+        max-width: 80%;
+    }
+
+    #input {
+        flex-direction: column;
+        gap: 10vw;
+        margin-top: 30vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    #ending-image img {
+        max-width: 100%;
+    }
+
+    .typing-input {
+        width: 50vw;
+        font-size: 1.8rem;
+        padding: 3vw;
+    }
+
+    button {
+        padding: 15px 10px;
+        font-size: 40px;
+    }
+
+    .send-button {
+        padding: 3vw 3vw;
+        font-size: 1.8em;
+    }
+
+    .button-each {
+        font-size: 1.4em;
+        padding: 2vw 4vw;
+    }
+
+    #nav {
+        position: relative;
+        margin-right: 3vw;
+        left: 0;
+    }
+
+    #about-opening h1 {
+        font-size: 20em;
+    }
+
+    .board {
+        height: 50vh;
+    }
+
+    #intro-about {
+        font-size: 1.8em;
+    }
+
+    #info {
+        margin-top: 4vh;
+    }
+
+    #photo img {
+        max-width: 80%;
+    }
+
+    #text2 img {
+        max-width: 100%;
+    }
+
+    #text3 img {
+        max-width: 100%;
+    }
+
+    .bio {
+        gap: 3vw;
+        margin-top: 4vh;
+        margin-left: 2vh;
+        margin-right: 2vh;
+    }
+
+    .box {
+        font-size: 1.2em
+    }
+
+    #hoobies {
+        height: 90vh;
+        text-align: center;
+    }
+
+    #message {
+        height: 80vh;
+        position: relative;
+        bottom: 0;
+    }
+
+    #cookie img {
+        max-width: 80%;
+    }
+
+    #text3 h3 {
+        position: relative;
+        bottom: 0;
+    }
+
+    #cookie {
+        transform: scale(1.25);
+        position: relative;
+        top: 15vh;
+    }
+
+    #bunch {
+        position: relative;
+        bottom: 29vh;
+    }
+
+    .sub-header {
+        font-size: 3em;
+    }
+
+    #fortune {
+        transform: scale(1.5);
+    }
+
+    #text4 img {
+        max-width: 90%;
+    }
+
+    #paper img {
+        position: relative;
+        top: 5vh;
+    }
+
+    #paper h3 {
+        font-size: 1em;
+        position: relative;
+        top: 10vh;
+    }
+
+    #work-opening h1 {
+        font-size: 25em;
+    }
+
+    #intro-work {
+        font-size: 1.8em;
+    }
+
+    .each-work {
+        position: relative;
+        bottom: 24vh;
+    }
+
+    #text5 img {
+        max-width: 90%;
+    }
+
+    #text6 img {
+        max-width: 70%;
+    }
+
+    #text7 img {
+        max-width: 70%;
+    }
+
+    .board .sub-header {
+        margin-top: 1vh;
+    }
+
+    .each-work .sub-header {
+        font-size: 1.8em
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    #main {
+        height: 100vh;
+    }
+
+    #each-main {
+        gap: 4vw;
+        position: relative;
+        top: 0;
+    }
+
+    .each-work-opening .sub-header {
+        font-size: 6em;
+    }
+
+    video {
+        max-width: 100%;
+    }
+
+    #short p {
+        font-size: 1.2em;
+        line-height: 3vw;
+    }
+
+    #each-main p {
+        font-size: 1.2em;
+        line-height: 3vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #loading-badge img {
+        max-width: 70%;
+    }
+
+    h2 {
+        font-size: 4.1rem;
+        margin-left: 10vw;
+        margin-right: 5vw;
+    }
+
+    #logo img {
+        max-width: 30%;
+    }
+
+    #logo {
+        position: relative;
+    }
+
+    #home-opening {
+        position: relative;
+        bottom: 0;
+        height: 90vh;
+    }
+
+    #intro-home {
+        font-size: 0.8em;
+        margin: 0;
+    }
+
+    .abstract-text h3 {
+        font-size: 0.8em;
+    }
+
+    .abstract-text {
+        gap: 23vw;
+        height: 70vh;
+        text-align: justify;
+    }
+
+    #abstract {
+        height: 180vh;
+        position: relative;
+        bottom: 0;
+        align-content: baseline;
+    }
+
+    #landing-image {
+        position: relative;
+        top: 35vh;
+        align-content: center;
+        align-items: center;
+    }
+
+    #bannerA {
+        position: relative;
+        /* This makes Object B position relative to Object A */
+        display: inline-block;
+        top: 24.5vh;
+        left: 2vw;
+    }
+
+    #mascotA {
+        position: relative;
+        left: 13vw;
+        bottom: 8vh;
+    }
+
+    #tool {
+        position: relative;
+        top: 25vh;
+        left: 0;
+        text-align: center;
+    }
+
+    #comb img {
+        max-width: 85%;
+    }
+
+    #arrow img {
+        max-width: 85%;
+    }
+
+    #patpat {
+        height: 50vh;
+    }
+
+    #patpat img {
+        max-width: 100%;
+    }
+
+    #bed {
+        position: relative;
+        top: 20vh;
+    }
+
+    #navigation {
+        height: 250vh;
+        position: relative;
+        bottom: 0;
+    }
+
+    .bubble img {
+        max-width: 70%;
+    }
+
+    #bubble-machine {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
+    #text1 img {
+        max-width: 80%;
+    }
+
+    #text1 h3 {
+        position: relative;
+        bottom: 0;
+    }
+
+    h3 {
+        font-size: 0.8em;
+    }
+
+    #bubbleB {
+        position: relative;
+        bottom: 0;
+        margin-top: 3vh;
+    }
+
+    .button-bow {
+        top: 25vh;
+        left: 14vw;
+    }
+
+    #contact-opening h1 {
+        font-size: 6em;
+    }
+
+    #intro-contact {
+        font-size: 0.8em;
+    }
+
+    #contact-milk img {
+        max-width: 80%;
+    }
+
+    #input {
+        flex-direction: column;
+        gap: 30vw;
+        margin-top: 30vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    #ending-image img {
+        max-width: 100%;
+    }
+
+    .typing-input {
+        width: 50vw;
+        font-size: 0.8rem;
+        padding: 3vw;
+    }
+
+    .board {
+        height: 50vh;
+    }
+
+    button {
+        padding: 15px 10px;
+        font-size: 20px;
+    }
+
+    .send-button {
+        padding: 3vw 3vw;
+    }
+
+    .button-each {
+        padding: 3vw 5vw;
+    }
+
+    #nav {
+        position: relative;
+        margin-right: 3vw;
+        left: 0;
+    }
+
+    #about-opening h1 {
+        font-size: 8em;
+    }
+
+    #intro-about {
+        font-size: 0.8em;
+    }
+
+    #info {
+        margin-top: 4vh;
+        flex-direction: column;
+        gap: 6vh;
+    }
+
+    #photo img {
+        max-width: 80%;
+    }
+
+    #text2 img {
+        max-width: 100%;
+    }
+
+    #text3 img {
+        max-width: 100%;
+    }
+
+    .bio {
+        margin-top: 10vh;
+        margin-left: 2vh;
+        margin-right: 2vh;
+    }
+
+    #hoobies {
+        height: 90vh;
+        text-align: center;
+    }
+
+    #message {
+        height: 50vh;
+        position: relative;
+        bottom: 0;
+    }
+
+    #application {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    #application img {
+        max-width: 50%;
+    }
+
+    #drop-zone {
+        transform: rotate(90deg);
+    }
+
+    #cookie img {
+        max-width: 100%;
+    }
+
+    #text3 h3 {
+        position: relative;
+        bottom: 0;
+    }
+
+    #cookie {
+        transform: scale(1.25);
+        position: relative;
+        top: 15vh;
+    }
+
+    #bunch {
+        position: relative;
+        bottom: 22vh;
+    }
+
+    .sub-header {
+        font-size: 1.4em;
+    }
+
+    #fortune {
+        transform: scale(1.5);
+    }
+
+    #text4 img {
+        max-width: 90%;
+    }
+
+    #paper img {
+        position: relative;
+        top: 5vh;
+    }
+
+    #paper h3 {
+        font-size: 0.4em;
+        position: relative;
+        top: 8vh;
+    }
+
+    #work-opening h1 {
+        font-size: 10em;
+    }
+
+    #intro-work {
+        font-size: 0.8em;
+    }
+
+    .board-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        gap: -10vw;
+    }
+
+    .each-work {
+        position: relative;
+        bottom: 32vh;
+    }
+
+    #text5 img {
+        max-width: 90%;
+    }
+
+    #text6 img {
+        max-width: 90%;
+    }
+
+    #text7 img {
+        max-width: 90%;
+    }
+
+    .board .sub-header {
+        margin-top: 1vh;
+    }
+
+    p {
+        font-size: 0.7em;
+        line-height: 2vw;
+    }
+
+    .each-work .sub-header {
+        font-size: 1.6em
+    }
+
+    #main {
+        height: 190vh;
+    }
+
+    #each-main {
+        display: flex;
+        flex-direction: column;
+        gap: 3vw;
+        position: relative;
+        top: 0;
+    }
+
+    .each-work-opening .sub-header {
+        font-size: 3.5rem;
+    }
+
+    video {
+        max-width: 100%;
+        margin-top: 3vw;
+    }
+
+    #short p {
+        font-size: 0.7em;
+        line-height: 5vw;
+    }
+
+    #each-main p {
+        font-size: 0.7em;
+        line-height: 5vw;
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+}
